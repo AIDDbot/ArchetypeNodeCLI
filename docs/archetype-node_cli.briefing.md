@@ -8,7 +8,7 @@ This project is an archetype for building Node.js command-line interfaces (CLI) 
 
 - **TypeScript Support**: Built using TypeScript, providing type safety and modern JavaScript features.
 - **Configuration Files**: Comes with configuration files for TypeScript, ESLint, and Prettier, ensuring code quality and consistency.
-- **Testing Framework**: Set up with a testing environment that leverages modern Node Built-in test runner.
+- **Testing Framework**: Set up with modern Node Built-in test runner, no other dependencies required.
 - **Command-Line Interface**: Includes a basic CLI setup that can be extended with additional commands and options.
 - **Environment Variables**: Supports loading environment variables from `.env` files, keeping them secret from git history.
 - **Monitoring and Logging**: Integrated with `console` for logging and monitoring CLI operations.
@@ -20,10 +20,11 @@ This project is an archetype for building Node.js command-line interfaces (CLI) 
 
 ## Technology Stack
 
-- **Node.js**: The runtime environment for executing the CLI.
+- **Node.js modern 2025**: The runtime environment for executing the CLI, but with modern 2025 SOTA features.
 - **TypeScript**: Used for writing the CLI application with type safety.
 - **ESLint**: Integrated for linting and code quality checks.
 - **Prettier**: Used for code formatting.
+All dependencies must be updatable to the latest version, and the project should be compatible with Node.js V24 LTS versions.
 
 ### Allowed dependencies
 
@@ -33,11 +34,11 @@ This project is an archetype for building Node.js command-line interfaces (CLI) 
 
 ### Deprecated dependencies to avoid
 
-- dotenv: Use Built-in Node.js `--env-file=.env` instead
-- jest: Use Node.js built-in test runner instead `node:test` and `node:assert/strict`
-- node-fetch: Use Node.js built-in `fetch` instead
-- nodemon: Use `node --watch` instead for watching file changes
-- tsc: Run TypeScript files directly with `node --disable-warning=ExperimentalWarning main.ts`
+- ~~dotenv~~: Use Built-in Node.js `--env-file=.env` instead
+- ~~jest~~: Use Node.js built-in test runner instead `node:test` and `node:assert/strict`
+- ~~node-fetch~~: Use Node.js built-in `fetch` instead
+- ~~nodemon~~: Use `node --watch` instead for watching file changes
+- ~~tsc~~: Run TypeScript files directly with `node --disable-warning=ExperimentalWarning main.ts`
 
 ### External Services
 
@@ -49,9 +50,10 @@ Used to enhance the functionality of the CLI with external data:
 ## Maintenance
 
 - Readme with installation and execution instructions.
+- Docs folder with detailed documentation on the CLI's development, features and usage.
 - Source code structure
 - Jsdoc comments for public functions and classes.
-- Unit tests for all public functions and classes.
+- Unit tests for public functions and classes.
 - E2E tests for the CLI commands.
 
 ---
