@@ -201,7 +201,7 @@ erDiagram
 
 - [Git repository](https://github.com/AIDDbot/ArchetypeNodeCLI)
 - [PRD Document](./PRD.md)
-- [SYSTEMS Architecture](./SYSTEMS.md) *(to be created)*
+- [SYSTEMS Architecture](./SYSTEMS.md)
 - [BACKLOG of features](./BACKLOG.md) *(to be created)*
 
 > End of DOMAIN for ArchetypeNodeCLI, last updated on August 7, 2025.

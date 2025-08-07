@@ -80,7 +80,7 @@ C4Context
 - [AIDDbot Organization](https://github.com/AIDDbot)
 - [AI Code Academy](https://aicode.academy)
 - [DOMAIN Models](./DOMAIN.md)
-- [SYSTEMS Architecture](./SYSTEMS.md) *(to be created)*
+- [SYSTEMS Architecture](./SYSTEMS.md)
 - [BACKLOG of features](./BACKLOG.md) *(to be created)*
 
 > End of PRD for ArchetypeNodeCLI, last updated on August 7, 2025.
