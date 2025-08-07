@@ -6,90 +6,38 @@
 
 ## System Components
 
-### S1 CLI Application Core
+### S1 CLI Core (`src/core/`)
 
-**Purpose:** Main application entry point that initializes the CLI framework and handles command routing
+**Purpose:** Application initialization and command registration
 
-**Technology Stack:**
-
-- **Language**: TypeScript
-- **Framework**: Commander.js
-- **Key Libraries**: Chalk (output formatting), Zod (schema validation)
+**Technology Stack:** TypeScript + Commander.js + Zod
 
 **Responsibilities:**
+- Register all available commands
+- Initialize global configuration
+- Handle global error catching
 
-- Parse command-line arguments and options
-- Route commands to appropriate handlers
-- Handle global error catching and logging
-- Initialize application configuration
+### S2 Weather Feature (`src/commands/weather/`)
 
-### S2 Location Service
+**Purpose:** Complete weather functionality including location detection and weather retrieval
 
-**Purpose:** Manages IP-based geolocation functionality to determine user's current location
-
-**Technology Stack:**
-
-- **Language**: TypeScript
-- **HTTP Client**: Node.js built-in fetch API
-- **Key Libraries**: Zod (API response validation)
+**Technology Stack:** TypeScript + Built-in fetch + Zod validation
 
 **Responsibilities:**
+- Implement weather command handler
+- Manage IP geolocation and weather API calls
+- Transform and display weather data
 
-- Detect user's IP address automatically
-- Call IP geolocation API (ip-api.com) to get location data
-- Validate and transform location response data
-- Cache location data for session duration
+### S3 Shared Services (`src/shared/`)
 
-### S3 Weather Service
+**Purpose:** Reusable utilities and API integrations
 
-**Purpose:** Retrieves current weather conditions based on geographic coordinates
-
-**Technology Stack:**
-
-- **Language**: TypeScript
-- **HTTP Client**: Node.js built-in fetch API
-- **Key Libraries**: Zod (API response validation)
+**Technology Stack:** TypeScript + Built-in APIs + Chalk
 
 **Responsibilities:**
-
-- Call Open Meteo API with latitude/longitude coordinates
-- Parse and validate weather data responses
-- Transform weather data into user-friendly format
-- Handle API rate limiting and error cases
-
-### S4 Logging System
-
-**Purpose:** Comprehensive logging system for debugging and monitoring CLI operations
-
-**Technology Stack:**
-
-- **Language**: TypeScript
-- **Runtime**: Node.js built-in console API
-- **Key Libraries**: Chalk (colored output)
-
-**Responsibilities:**
-
-- Log all CLI operations with appropriate severity levels
-- Format log messages with timestamps and context
-- Provide colored console output for different log levels
-- Track command execution flow and API calls
-
-### S5 Configuration Manager
-
-**Purpose:** Handles environment variables and application configuration settings
-
-**Technology Stack:**
-
-- **Language**: TypeScript
-- **Environment Loading**: Node.js built-in --env-file feature
-- **Key Libraries**: Zod (configuration validation)
-
-**Responsibilities:**
-
-- Load environment variables from .env files
-- Validate configuration schema
-- Provide type-safe configuration access
-- Handle missing or invalid configuration gracefully
+- API clients for external services
+- Logging system with colored output
+- Common type definitions and utilities
 
 ## Data Layer
 
@@ -198,47 +146,102 @@ C4Container
 
 ### Development Workflow
 
-**Development Server:** Node.js with --watch flag for auto-restart
-**TypeScript Execution:** Direct execution with --disable-warning=ExperimentalWarning
-**Testing Framework:** Node.js built-in test runner with node:test and node:assert/strict
-**Code Quality:** ESLint + Prettier with pre-configured rules
+**Simplified Development Setup:**
+- **TypeScript Execution**: Direct execution with `node --loader tsx src/core/cli.ts`
+- **Development Mode**: `node --loader tsx --watch src/core/cli.ts` for auto-restart
+- **Testing**: `node --test tests/**/*.test.ts` (built-in test runner)
+- **Code Quality**: `npx eslint src/` and `npx prettier --write src/`
+
+**No Build Step Required**: TypeScript files execute directly, eliminating compilation complexity
 
 ### Build and Distribution
 
-**Build Process:** No compilation step required (direct TypeScript execution)
-**Package Management:** npm with minimal dependencies (Commander, Chalk, Zod only)
-**Distribution:** npm package for easy installation and usage
-**Deployment:** Global CLI installation via npm install -g
+**Simplified Build Process:**
+- **No Compilation**: Direct TypeScript execution eliminates build step
+- **Package Management**: `npm` with only 3 production dependencies (Commander, Chalk, Zod)
+- **Distribution**: Standard npm package with TypeScript source files
+- **Installation**: `npm install -g archetype-node-cli`
+- **Execution**: `weather-cli` command available globally after installation
+
+**Package.json Scripts:**
+```json
+{
+  "scripts": {
+    "start": "node --loader tsx src/core/cli.ts",
+    "dev": "node --loader tsx --watch src/core/cli.ts",
+    "test": "node --test tests/**/*.test.ts",
+    "lint": "eslint src/",
+    "format": "prettier --write src/"
+  }
+}
+```
 
 ### Project Structure
 
+Following **screaming architecture** principles, the project is organized by feature/functionality rather than technical type:
+
 ```
 src/
-├── commands/           # Command implementations
-│   ├── weather.ts     # Weather command handler
-│   └── help.ts        # Help command handler
-├── services/          # Business logic services
-│   ├── location.ts    # Location service
-│   ├── weather.ts     # Weather service
-│   └── logging.ts     # Logging service
-├── types/             # TypeScript type definitions
-│   ├── location.ts    # Location data types
-│   └── weather.ts     # Weather data types
-├── utils/             # Utility functions
-│   └── config.ts      # Configuration management
-└── main.ts            # Application entry point
+├── core/                    # Core application logic and initialization
+│   ├── cli.ts              # Main CLI setup with Commander.js
+│   └── config.ts           # Configuration management and validation
+├── commands/               # Feature-based command handlers
+│   ├── weather/            # Weather functionality
+│   │   ├── weather.command.ts    # Weather command implementation
+│   │   ├── weather.service.ts    # Weather business logic
+│   │   └── weather.types.ts      # Weather-specific types
+│   └── help/               # Help functionality
+│       └── help.command.ts       # Help command implementation
+└── shared/                 # Shared utilities and components
+    ├── api/                # External API integrations
+    │   ├── location.api.ts        # IP geolocation API client
+    │   └── weather.api.ts         # Weather API client
+    ├── logger/             # Logging utilities
+    │   └── logger.service.ts      # Centralized logging system
+    └── types/              # Shared type definitions
+        ├── location.types.ts      # Location data types
+        └── common.types.ts        # Common shared types
 
-tests/                 # Test files using node:test
-├── commands/          # Command tests
-├── services/          # Service tests
-└── integration/       # Integration tests
+tests/                      # Test files using node:test
+├── commands/               # Command-specific tests
+│   └── weather/           # Weather command tests
+└── shared/                # Shared utilities tests
+    ├── api/               # API integration tests
+    └── logger/            # Logger tests
 
-docs/                  # Documentation
-config/                # Configuration files
-├── .eslintrc.json     # ESLint configuration
-├── .prettierrc        # Prettier configuration
-└── tsconfig.json      # TypeScript configuration
+.env.example               # Environment variables template
+package.json               # Dependencies and scripts
+tsconfig.json             # TypeScript configuration
+.eslintrc.json            # ESLint configuration
+.prettierrc               # Prettier configuration
 ```
+
+### Architectural Layers
+
+The application follows a **3-layer logical architecture**:
+
+#### 1. Presentation Layer (Commands)
+- **Location**: `src/commands/*/`
+- **Responsibility**: Handle CLI input, validation, and output formatting
+- **Components**: Command handlers that parse arguments and coordinate business logic
+
+#### 2. Business Layer (Services)
+- **Location**: `src/commands/*/` (co-located with commands)
+- **Responsibility**: Core business logic and data transformation
+- **Components**: Service classes that orchestrate API calls and data processing
+
+#### 3. Integration Layer (Shared APIs)
+- **Location**: `src/shared/api/`
+- **Responsibility**: External API communication and data access
+- **Components**: API clients that handle HTTP calls and response validation
+
+### Simplified Development Approach
+
+**Single Entry Point**: `src/core/cli.ts` registers all commands
+**Co-location**: Related functionality grouped together (commands + services + types)
+**Minimal Dependencies**: Only essential packages (Commander, Chalk, Zod)
+**Direct Execution**: No build step required with `node --loader tsx`
+**Built-in Testing**: Node.js native test runner eliminates external test dependencies
 
 ## Additional Information
 
