@@ -2,186 +2,199 @@
 
 ## Overview
 
-**ArchetypeNodeCLI** operates in the **software archetype creation and distribution** domain, helping developers and organizations create, maintain, and share standardized project templates that accelerate software development and ensure consistency across teams.
+**ArchetypeNodeCLI** operates in the **weather information services** domain, providing users with location-based weather data through a command-line interface. The system automatically detects user location via IP geolocation and retrieves current weather conditions from external meteorological services.
 
 ## Main Entities
 
-### E1 Software Archetype
+### E1 User Location
 
-**Description:** A standardized, reusable project template that embodies best practices, conventions, and proven patterns for a specific type of software development
-
-**Attributes:**
-
-- name: string - Unique identifier for the archetype (e.g., "node-cli", "react-spa")
-- version: string - Semantic version following archetype evolution
-- category: string - Type classification (CLI, Web App, API, Library)
-- author: string - Creator or maintaining organization
-- description: string - Purpose and intended use case
-- targetTechnology: string - Primary technology stack (Node.js, React, etc.)
-- maturityLevel: string - Development stage (experimental, stable, deprecated)
-
-### E2 Developer
-
-**Description:** Software developer or development team that creates new projects using archetypos
+**Description:** Geographic location of the user determined through IP address geolocation
 
 **Attributes:**
 
-- id: string - Unique developer identifier
-- name: string - Developer or team name
-- experience: string - Skill level (beginner, intermediate, expert)
-- preferredTechnologies: string[] - Familiar technology stacks
-- organizationId: string - Associated organization (if applicable)
+- ipAddress: string - User's current IP address
+- latitude: number - Geographic latitude coordinate
+- longitude: number - Geographic longitude coordinate
+- city: string - City name where user is located
+- country: string - Country name
+- region: string - State or region name
+- timezone: string - User's timezone identifier
 
-### E3 Organization
+### E2 Weather Data
 
-**Description:** Company, team, or community that creates, maintains, or standardizes archetypos
-
-**Attributes:**
-
-- id: string - Unique organization identifier
-- name: string - Organization name
-- type: string - Organization type (company, open-source, educational)
-- standards: string[] - Coding standards and conventions enforced
-- approvedArchetypes: string[] - List of sanctioned archetypos for use
-
-### E4 Project Instance
-
-**Description:** A concrete software project created from an archetype template
+**Description:** Current meteorological conditions for a specific location
 
 **Attributes:**
 
-- id: string - Unique project identifier
-- name: string - Project name chosen by developer
-- sourceArchetype: string - Originating archetype name and version
-- creationDate: Date - When project was generated
-- customizations: string[] - Modifications made to the original archetype
-- developerId: string - Creator of the project instance
+- temperature: number - Current temperature in degrees
+- temperatureUnit: string - Temperature unit (Celsius/Fahrenheit)
+- humidity: number - Relative humidity percentage
+- windSpeed: number - Wind speed
+- windDirection: string - Wind direction (N, NE, E, SE, S, SW, W, NW)
+- weatherCondition: string - Current weather description (sunny, cloudy, rainy, etc.)
+- timestamp: Date - When the weather data was recorded
 
-### E5 Best Practice
+### E3 CLI Command
 
-**Description:** Proven development pattern, convention, or standard embedded within archetypos
+**Description:** Executable command within the weather CLI application
 
 **Attributes:**
 
-- id: string - Unique practice identifier
-- name: string - Practice name
-- category: string - Type (coding standard, architecture pattern, tooling)
-- description: string - What the practice addresses
-- rationale: string - Why this practice is recommended
-- applicableContexts: string[] - When this practice should be used
+- name: string - Command identifier (e.g., "weather", "help")
+- description: string - What the command does
+- arguments: string[] - Required command arguments
+- options: string[] - Optional command flags
+- handler: Function - Command execution logic
+
+### E4 Log Entry
+
+**Description:** System log record for tracking operations and debugging
+
+**Attributes:**
+
+- timestamp: Date - When the log entry was created
+- level: string - Log level (debug, info, warn, error)
+- message: string - Log message content
+- command: string - Which command generated the log
+- source: string - Source component (CLI, API, etc.)
+- metadata: object - Additional contextual information
+
+### E5 API Service
+
+**Description:** External service used to retrieve location or weather information
+
+**Attributes:**
+
+- name: string - Service name (e.g., "IP-API", "Open Meteo")
+- baseUrl: string - Base URL for API requests
+- endpoints: object - Available API endpoints
+- rateLimit: number - Requests per minute limit
+- lastRequestTime: Date - Timestamp of last API call
 
 ## Entity Relationships
 
-### R1 Developer ↔ Project Instance
+### R1 User Location ↔ Weather Data
 
 **Relationship Type:** One-to-Many
-**Description:** A developer can create multiple projects from various archetypos
-**Business Rule:** Each project must be traceable to its creator for support and learning purposes
+**Description:** A specific location can have multiple weather readings over time
+**Business Rule:** Weather data is always associated with geographic coordinates from user location
 
-### R2 Organization ↔ Software Archetype
+### R2 CLI Command ↔ Log Entry
 
 **Relationship Type:** One-to-Many
-**Description:** Organizations create and maintain archetypos that reflect their standards and practices
-**Business Rule:** Organizations control the evolution and approval of their archetypos
+**Description:** Each command execution generates one or more log entries
+**Business Rule:** All operations must be logged for debugging and monitoring purposes
 
-### R3 Software Archetype ↔ Best Practice
+### R3 API Service ↔ User Location
+
+**Relationship Type:** One-to-Many
+**Description:** IP geolocation service provides location data for multiple users
+**Business Rule:** Location requests must respect API rate limits and handle failures gracefully
+
+### R4 API Service ↔ Weather Data
+
+**Relationship Type:** One-to-Many
+**Description:** Weather API service provides meteorological data for multiple locations
+**Business Rule:** Weather requests must include valid coordinates and handle API errors
+
+### R5 CLI Command ↔ API Service
 
 **Relationship Type:** Many-to-Many
-**Description:** Archetypos embody multiple best practices, and practices can be applied across different archetypos
-**Business Rule:** Archetypos must implement at least basic best practices for their category
-
-### R4 Software Archetype ↔ Project Instance
-
-**Relationship Type:** One-to-Many
-**Description:** An archetype serves as the template for creating multiple project instances
-**Business Rule:** Project instances inherit the foundational structure and practices from their source archetype
-
-### R5 Organization ↔ Developer
-
-**Relationship Type:** One-to-Many
-**Description:** Organizations employ or collaborate with developers who use approved archetypos
-**Business Rule:** Developers should use organization-approved archetypos when working on organizational projects
+**Description:** Commands may call multiple API services, and services can be used by different commands
+**Business Rule:** API calls must implement proper error handling and timeout mechanisms
 
 ## Business Rules and Validations
 
 ### Data Validation Rules
 
-1. **Archetype Quality Standards**
-   - Archetypos must pass automated quality checks before publication
-   - Version numbers must follow semantic versioning principles
-   - All archetypos must include comprehensive documentation
+1. **Location Data Validation**
+   - IP addresses must be valid IPv4 or IPv6 format
+   - Latitude must be between -90 and 90 degrees
+   - Longitude must be between -180 and 180 degrees
+   - Geographic location data must be consistent across fields
 
-2. **Developer Usage Rules**
-   - Developers must specify intended use case when selecting an archetype
-   - Project customizations should be documented for future reference
-   - Generated projects must acknowledge their source archetype
+2. **Weather Data Validation**
+   - Temperature values must be within reasonable ranges (-100°C to 60°C)
+   - Humidity must be between 0% and 100%
+   - Wind speed must be non-negative
+   - Weather conditions must be from predefined set of valid states
 
-3. **Organization Governance**
-   - Organizations can only approve archetypos that meet their standards
-   - Archetype authors must be verified members of the organization
-   - Deprecated archetypos must provide migration paths to newer versions
+3. **Command Input Validation**
+   - Command names must follow established patterns
+   - Arguments must be properly formatted for their expected types
+   - Options/flags must be recognized by the command parser
+   - Invalid inputs must provide helpful error messages
 
 ### Business Operation Rules
 
-1. **Archetype Lifecycle Management**
-   - New archetypos start in experimental status before becoming stable
-   - Breaking changes require major version increments
-   - Deprecated archetypos must remain available for existing projects
+1. **API Rate Limiting**
+   - Location requests limited to prevent IP geolocation API abuse
+   - Weather requests must respect service rate limits
+   - Failed API calls must implement exponential backoff retry strategy
+   - API timeouts must be handled gracefully with fallback options
 
-2. **Knowledge Transfer and Learning**
-   - Archetypos should accelerate project setup while teaching best practices
-   - Documentation must explain the reasoning behind included patterns
-   - Success metrics include developer productivity and code quality improvements
+2. **Data Freshness and Caching**
+   - Weather data should be considered stale after 30 minutes
+   - Location data can be cached for the session duration
+   - Cache misses should trigger new API requests
+   - Stale data must be clearly indicated to users
+
+3. **Error Handling and Logging**
+   - All operations must be logged with appropriate severity levels
+   - Network failures must be logged and communicated to users
+   - API errors must be translated into user-friendly messages
+   - Critical errors must be logged with full context for debugging
 
 ## Entity-Relationship Diagram
 
 ```mermaid
 erDiagram
-    SOFTWARE_ARCHETYPE {
+    USER_LOCATION {
+        string ipAddress
+        number latitude
+        number longitude
+        string city
+        string country
+        string region
+        string timezone
+    }
+    WEATHER_DATA {
+        number temperature
+        string temperatureUnit
+        number humidity
+        number windSpeed
+        string windDirection
+        string weatherCondition
+        date timestamp
+    }
+    CLI_COMMAND {
         string name
-        string version
-        string category
-        string author
         string description
-        string targetTechnology
-        string maturityLevel
+        array arguments
+        array options
+        function handler
     }
-    DEVELOPER {
-        string id
-        string name
-        string experience
-        array preferredTechnologies
-        string organizationId
+    LOG_ENTRY {
+        date timestamp
+        string level
+        string message
+        string command
+        string source
+        object metadata
     }
-    ORGANIZATION {
-        string id
+    API_SERVICE {
         string name
-        string type
-        array standards
-        array approvedArchetypes
-    }
-    PROJECT_INSTANCE {
-        string id
-        string name
-        string sourceArchetype
-        date creationDate
-        array customizations
-        string developerId
-    }
-    BEST_PRACTICE {
-        string id
-        string name
-        string category
-        string description
-        string rationale
-        array applicableContexts
+        string baseUrl
+        object endpoints
+        number rateLimit
+        date lastRequestTime
     }
 
-    DEVELOPER ||--o{ PROJECT_INSTANCE : creates
-    ORGANIZATION ||--o{ SOFTWARE_ARCHETYPE : maintains
-    SOFTWARE_ARCHETYPE }o--o{ BEST_PRACTICE : implements
-    SOFTWARE_ARCHETYPE ||--o{ PROJECT_INSTANCE : "generates"
-    ORGANIZATION ||--o{ DEVELOPER : employs
+    USER_LOCATION ||--o{ WEATHER_DATA : "provides coordinates for"
+    CLI_COMMAND ||--o{ LOG_ENTRY : generates
+    API_SERVICE ||--o{ USER_LOCATION : provides
+    API_SERVICE ||--o{ WEATHER_DATA : provides
+    CLI_COMMAND }o--o{ API_SERVICE : calls
 ```
 
 ## Additional Information
