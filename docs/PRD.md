@@ -79,7 +79,7 @@ C4Context
 - [Author: Alberto Basalo](https://albertobasalo.dev)
 - [AIDDbot Organization](https://github.com/AIDDbot)
 - [AI Code Academy](https://aicode.academy)
-- [DOMAIN Models](./DOMAIN.md) *(to be created)*
+- [DOMAIN Models](./DOMAIN.md)
 - [SYSTEMS Architecture](./SYSTEMS.md) *(to be created)*
 - [BACKLOG of features](./BACKLOG.md) *(to be created)*
 

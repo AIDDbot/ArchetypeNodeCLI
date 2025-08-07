@@ -4,6 +4,7 @@ Archetype for building CLI apps with Node using AIDDbot and other LLM agents
 ## Documentation
 
 - [📋 Project Requirements (PRD)](./docs/PRD.md)
+- [🏗️ Domain Models (DOMAIN)](./docs/DOMAIN.md)
 
 ---
 
