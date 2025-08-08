@@ -10,13 +10,13 @@ Notes
 
 ## Overview
 
-| Epic                                                             | Priority | Feature Status |
-| ---------------------------------------------------------------- | -------- | -------------- |
-| [E1 Project Setup & Tooling](#e1-project-setup--tooling)         | ‼️ High   | ⏳ ⏳ ⏳          |
-| [E2 CLI Core (Help & Version)](#e2-cli-core-help--version)       | ❗ High   | ⏳ ⏳            |
-| [E3 Weather Feature](#e3-weather-feature)                        | ❗ High   | ⏳ ⏳ ⏳          |
-| [E4 Environment & Config](#e4-environment--config)               | ❕ Normal | ⏳ ⏳            |
-| [E5 Logging & UX](#e5-logging--ux)                               | ❕ Normal | ⏳ ⏳            |
+| Epic                                                       | Priority | Feature Status |
+| ---------------------------------------------------------- | -------- | -------------- |
+| [E1 Project Setup & Tooling](#e1-project-setup--tooling)   | ‼️ High   | ⏳ ⏳ ⏳          |
+| [E2 CLI Core (Help & Version)](#e2-cli-core-help--version) | ❗ High   | ⏳ ⏳            |
+| [E3 Weather Feature](#e3-weather-feature)                  | ❗ High   | ⏳ ⏳ ⏳          |
+| [E4 Environment & Config](#e4-environment--config)         | ❕ Normal | ⏳ ⏳            |
+| [E5 Logging & UX](#e5-logging--ux)                         | ❕ Normal | ⏳ ⏳            |
 
 
 > Epic Priority Legend: ‼️ Critical ❗ High ❕ Normal
