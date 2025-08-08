@@ -36,6 +36,17 @@ Attributes:
 - summary: string
 - timestamp: string
 
+### E4 GeoLocation
+
+Description: Geolocation data resolved from the current public IP using ip-api.com.
+
+Attributes:
+- lat: number – latitude in decimal degrees
+- lon: number – longitude in decimal degrees
+- city?: string – optional city name
+- country?: string – optional country name/code
+- provider: "ip-api" | string – data source identifier
+
 ## Entity Relationships
 
 ### R1 CLI Application ↔ Command
@@ -44,11 +55,17 @@ Relationship Type: One-to-Many
 Description: A CLI application contains multiple commands.
 Business Rule: Commands must be registered to be discoverable by help/version output.
 
-### R2 Command ↔ WeatherReport
+### R2 Command ↔ GeoLocation
 
 Relationship Type: One-to-One (per invocation)
-Description: The weather command produces a WeatherReport from external API data.
-Business Rule: The report must be validated before printing.
+Description: The weather command first resolves GeoLocation using ip-api.com.
+Business Rule: If geolocation fails, the command should fail gracefully or allow overriding via flags.
+
+### R3 GeoLocation ↔ WeatherReport
+
+Relationship Type: One-to-One (per invocation)
+Description: WeatherReport is built using coordinates from GeoLocation combined with Open-Meteo data.
+Business Rule: Coordinates must be validated before requesting weather.
 
 ## Business Rules and Validations
 
@@ -65,8 +82,9 @@ Business Rule: The report must be validated before printing.
 ### Business Operation Rules
 
 1. External API usage
-   - Respect HTTP errors and rate limits; show actionable messages
-   - Timeouts must be handled gracefully
+    - Use ip-api.com to resolve GeoLocation (JSON endpoint); respect HTTP errors and rate limits
+    - Use Open-Meteo to retrieve weather using resolved coordinates
+    - Timeouts must be handled gracefully
 
 2. Output formatting
    - Use plain text, optionally colored, suitable for terminals
@@ -85,6 +103,13 @@ erDiagram
         string name
         string description
     }
+    GeoLocation {
+        float lat
+        float lon
+        string city
+        string country
+        string provider
+    }
     WeatherReport {
         float temperatureC
         string summary
@@ -92,7 +117,8 @@ erDiagram
     }
 
     CliApplication ||--o{ Command : contains
-    Command ||--|| WeatherReport : produces
+    Command ||--|| GeoLocation : resolves
+    GeoLocation ||--|| WeatherReport : enriches
 ```
 
 ## Additional Information

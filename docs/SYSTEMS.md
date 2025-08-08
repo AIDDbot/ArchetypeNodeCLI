@@ -29,10 +29,23 @@ Technology Stack:
 - Libraries: fetch (Node built‑in), zod
 
 Responsibilities:
-- Resolve coordinates via IP Geolocation API
+- Resolve coordinates via IP Geolocation API (ip-api.com)
 - Fetch current weather from Open‑Meteo
 - Validate and map responses to WeatherReport
 - Print a concise summary
+
+### S3 GeoLocation Adapter
+
+Purpose: Abstract calls to ip-api.com and normalize geolocation data for the weather module.
+
+Technology Stack:
+- Language: TypeScript
+- Libraries: fetch (Node built‑in), zod
+
+Responsibilities:
+- Call ip-api.com JSON endpoint to obtain lat/lon and location metadata
+- Validate response schema and map to GeoLocation domain entity
+- Surface clear errors and rate-limit handling
 
 ## Data Layer
 
@@ -51,7 +64,7 @@ Key Design Decisions:
 ### I1 HTTP integrations
 
 Type: REST API
-Purpose: Retrieve geolocation and weather
+Purpose: Retrieve geolocation (ip-api.com) and weather (Open‑Meteo)
 Protocol: HTTPS
 Data Format: JSON
 
@@ -82,17 +95,19 @@ C4Container
 
     Person(dev, "Developer", "Runs CLI locally")
 
-    System_Boundary(system, "ArchetypeNodeCLI System") {
-        Container(cli, "CLI Core", "TypeScript + Commander", "Parses commands and dispatches")
-        Container(weather, "Weather Module", "TypeScript + fetch+zod", "Calls external APIs and formats output")
-    }
+  System_Boundary(system, "ArchetypeNodeCLI System") {
+    Container(cli, "CLI Core", "TypeScript + Commander", "Parses commands and dispatches")
+    Container(geoAdapter, "GeoLocation Adapter", "TS + fetch+zod", "Resolves IP-based coordinates from ip-api.com")
+    Container(weather, "Weather Module", "TypeScript + fetch+zod", "Calls external APIs and formats output")
+  }
 
     System_Ext(geo, "IP Geolocation API", "ip-api.com")
     System_Ext(meteo, "Open-Meteo API", "open-meteo.com")
 
     Rel(dev, cli, "Runs")
-    Rel(cli, weather, "Invokes")
-    Rel(weather, geo, "GET /json")
+  Rel(cli, weather, "Invokes")
+  Rel(weather, geoAdapter, "Resolve coords")
+  Rel(geoAdapter, geo, "GET /json")
     Rel(weather, meteo, "GET /forecast")
 ```
 
