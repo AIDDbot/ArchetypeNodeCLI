@@ -126,6 +126,8 @@ erDiagram
 - Git repository: https://github.com/AIDDbot/ArchetypeNodeCLI
 - PRD Document: ./PRD.md
 - Systems Architecture: ./SYSTEMS.md
-- Backlog of features: ./BACKLOG.md
+ - BACKLOG: to be created in Builder phase (Builder role)
+ - Project Briefing: ./archetype-node_cli.briefing.md
+ - README: ../README.md
 
 > End of DOMAIN for ArchetypeNodeCLI, last updated on 2025-08-08.

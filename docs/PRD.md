@@ -70,6 +70,8 @@ C4Context
 - Git repository: https://github.com/AIDDbot/ArchetypeNodeCLI
 - Domain Models: ./DOMAIN.md
 - Systems Architecture: ./SYSTEMS.md
-- Backlog of features: ./BACKLOG.md (to be created in Builder phase)
+ - BACKLOG: to be created in Builder phase (Builder role)
+ - Project Briefing: ./archetype-node_cli.briefing.md
+ - README: ../README.md
 
 > End of PRD for ArchetypeNodeCLI, last updated on 2025-08-08.
