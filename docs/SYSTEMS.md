@@ -116,7 +116,7 @@ C4Container
 - Git repository: https://github.com/AIDDbot/ArchetypeNodeCLI
 - PRD Document: ./PRD.md
 - Domain Models: ./DOMAIN.md
- - BACKLOG: to be created in Builder phase (Builder role)
+ - [BACKLOG.md]() — to be created in Builder phase (Builder role)
  - Project Briefing: ./archetype-node_cli.briefing.md
  - README: ../README.md
 
