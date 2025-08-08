@@ -13,6 +13,7 @@ Create a Systems Architecture Document that defines the project's technical arch
 
 - [PRD.md](/docs/PRD.md)
 - [DOMAIN.md](/docs/DOMAIN.md)
+- [Architecture Instructions](/.github/instructions/architecture.instructions.md)
 
 ## Workflow
 
@@ -39,7 +40,7 @@ In case of doubt, ask the user for clarification.
 
 - [ ] Write the systems architecture in Markdown format at `/docs/SYSTEMS.md`.
 
-- Run the [/Ab_add-instructions](../prompts/Ab-add-instructions.prompt.md) to get instructions for the languages, frameworks, and libraries mentioned in the SYSTEMS document.
+- [ ] Run the [/Ab_add-instructions](../prompts/Ab-add-instructions.prompt.md) to get instructions for the languages, frameworks, and libraries mentioned in the SYSTEMS document.
 
 - [ ] Update [README.md](/README.md) with link to this SYSTEMS document.
 
