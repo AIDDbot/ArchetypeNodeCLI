@@ -10,15 +10,14 @@ Notes
 
 ## Overview
 
-| Epic                                                             | Priority | Feature Status                                        |
-| ---------------------------------------------------------------- | -------- | ----------------------------------------------------- |
-| [E1 Project Setup & Tooling](#e1-project-setup--tooling)         | ❗ High   | ⏳ ⏳ ⏳ |
-| [E2 CLI Core (Help & Version)](#e2-cli-core-help--version)       | ❗ High   | ⏳ ⏳ |
-| [E3 Weather Feature](#e3-weather-feature)                        | ❗ High   | ⏳ ⏳ ⏳ |
-| [E4 Environment & Config](#e4-environment--config)               | ❕ Normal | ⏳ ⏳ |
-| [E5 Logging & UX](#e5-logging--ux)                               | ❕ Normal | ⏳ ⏳ |
-| [E6 Testing](#e6-testing)                                        | ❕ Normal | ⏳ ⏳ |
-| [E7 Documentation & Maintenance](#e7-documentation--maintenance) | ❕ Normal | ⏳ ⏳ ⏳ |
+| Epic                                                             | Priority | Feature Status |
+| ---------------------------------------------------------------- | -------- | -------------- |
+| [E1 Project Setup & Tooling](#e1-project-setup--tooling)         | ‼️ High   | ⏳ ⏳ ⏳          |
+| [E2 CLI Core (Help & Version)](#e2-cli-core-help--version)       | ❗ High   | ⏳ ⏳            |
+| [E3 Weather Feature](#e3-weather-feature)                        | ❗ High   | ⏳ ⏳ ⏳          |
+| [E4 Environment & Config](#e4-environment--config)               | ❕ Normal | ⏳ ⏳            |
+| [E5 Logging & UX](#e5-logging--ux)                               | ❕ Normal | ⏳ ⏳            |
+
 
 > Epic Priority Legend: ‼️ Critical ❗ High ❕ Normal
 > Feature Status Legend: ✔️ RELEASED | ✅ CODED | 📝 DESIGNED | ⏳ PENDING | ❌ BLOCKED
@@ -27,7 +26,7 @@ Notes
 
 ## E1 Project Setup & Tooling
 
-- Priority: ❗ High
+- Priority: ‼️ Critical
 - Project Requirements: R1 Base project scaffolding — Provide TypeScript configuration, ESLint, and Prettier setup to ensure consistent code quality and formatting.
 
 Establish the TypeScript and linting toolchain plus helpful npm scripts to enable a smooth DX.
@@ -172,65 +171,7 @@ Centralize error handling at CLI boundary; provide clear, helpful messages.
 
 ---
 
-## E6 Testing
 
-- Priority: ❕ Normal
-- Project Requirements: R6 Testing — Demonstrate unit tests using node:test and node:assert/strict, and a basic CLI smoke test when feasible.
-
-Provide examples of unit and smoke tests integrated into npm scripts.
-
-### F6.1 Unit tests with node:test [#13](https://github.com/AIDDbot/ArchetypeNodeCLI/issues/13) ⏳ PENDING
-
-- Dependencies: F1.3, F2.1
-- Feature documentation Links:
-	- [PRD R6](./PRD.md#r6-testing)
-
-Add example unit tests using node:test and node:assert/strict.
-
-### F6.2 CLI smoke/E2E [#14](https://github.com/AIDDbot/ArchetypeNodeCLI/issues/14) ⏳ PENDING
-
-- Dependencies: F2.1, F6.1
-- Feature documentation Links:
-	- [PRD R6](./PRD.md#r6-testing)
-
-Execute CLI in a smoke test to assert exit code and basic output.
-
----
-
-## E7 Documentation & Maintenance
-
-- Priority: ❕ Normal
-- Project Requirements: R7 Documentation and maintenance — Include README usage notes, maintain architectural docs, and add JSDoc to public APIs where applicable.
-
-Keep user documentation and internal docs aligned as features evolve.
-
-### F7.1 README usage notes [#15](https://github.com/AIDDbot/ArchetypeNodeCLI/issues/15) ⏳ PENDING
-
-- Dependencies: F2.1
-- Feature documentation Links:
-	- [PRD R7](./PRD.md#r7-documentation-and-maintenance)
-
-Add usage instructions for running the CLI and its options.
-
-### F7.2 Architecture docs refresh [#16](https://github.com/AIDDbot/ArchetypeNodeCLI/issues/16) ⏳ PENDING
-
-- Dependencies: Features completed per release
-- Feature documentation Links:
-	- [PRD R7](./PRD.md#r7-documentation-and-maintenance)
-	- [DOMAIN](./DOMAIN.md)
-	- [SYSTEMS](./SYSTEMS.md)
-
-Update PRD/DOMAIN/SYSTEMS after significant changes.
-
-### F7.3 Inline JSDoc for public APIs [#17](https://github.com/AIDDbot/ArchetypeNodeCLI/issues/17) ⏳ PENDING
-
-- Dependencies: Feature implementations exposing public APIs
-- Feature documentation Links:
-	- [PRD R7](./PRD.md#r7-documentation-and-maintenance)
-
-Add concise JSDoc to exported functions and modules.
-
----
 
 ## Additional Information
 
