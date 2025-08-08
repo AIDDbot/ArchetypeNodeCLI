@@ -43,4 +43,6 @@ Determine if the project requires a Project Requirements Document (PRD), Domain 
 - **docs/DOMAIN.md**: Entities, relationships, and business rules of the project.
 - **docs/SYSTEMS.md**: System architecture, components and implementation details.
 
+- [ ] Ensure links between documents and README are valid and up-to-date.
+
 > End of the Architect role.
