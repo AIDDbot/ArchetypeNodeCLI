@@ -123,11 +123,11 @@ erDiagram
 
 ## Additional Information
 
-- Git repository: https://github.com/AIDDbot/ArchetypeNodeCLI
-- PRD Document: ./PRD.md
-- Systems Architecture: ./SYSTEMS.md
+ - [Git repository: ](https://github.com/AIDDbot/ArchetypeNodeCLI)
+ - [PRD Document:](./PRD.md)
+ - [Systems Architecture:](./SYSTEMS.md)
  - [BACKLOG.md]() — to be created in Builder phase (Builder role)
- - Project Briefing: ./archetype-node_cli.briefing.md
- - README: ../README.md
+ - [Project Briefing:](./archetype-node_cli.briefing.md)
+ - [README:](../README.md)
 
 > End of DOMAIN for ArchetypeNodeCLI, last updated on 2025-08-08.
