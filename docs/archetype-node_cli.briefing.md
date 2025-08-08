@@ -1,10 +1,15 @@
 # Archetype Node CLI Briefing
 
-This project is an archetype for building Node.js command-line interfaces (CLI) using TypeScript. It provides a structured setup with essential tools and configurations to streamline development, and a simple set of features to serve as a sample and guide for creating your own CLI applications.
+This project is an archetype for building Node.js command-line interfaces (CLI) using TypeScript. 
+It provides a structured setup with essential tools and configurations to streamline development.
+It includes a simple set of features to serve as a sample and guide for creating your own CLI applications.
+It is not intended for production use, but rather as a learning tool and a starting point for your own projects.
 
 ## Features
 
-### Key Features
+The archetype provides a set of core features to facilitate the development of CLI applications and others to be used as samples.
+
+### Core Features
 
 - **TypeScript Support**: Built using TypeScript, providing type safety and modern JavaScript features.
 - **Configuration Files**: Comes with configuration files for TypeScript, ESLint, and Prettier, ensuring code quality and consistency.
@@ -13,7 +18,7 @@ This project is an archetype for building Node.js command-line interfaces (CLI) 
 - **Environment Variables**: Supports loading environment variables from `.env` files, keeping them secret from git history.
 - **Monitoring and Logging**: Integrated with `console` for logging and monitoring CLI operations.
 
-### Sample features
+### Business Features
 
 - **Weather Command**: A sample command that fetches and displays weather information based on current ip latitude and longitude.
 - **Help Command**: Provides usage instructions and available commands when invoked with `--help`.
@@ -51,10 +56,11 @@ Used to enhance the functionality of the CLI with external data:
 
 - Readme with installation and execution instructions.
 - Docs folder with detailed documentation on the CLI's development, features and usage.
-- Source code structure
+- Source code folder structure and organization.
 - Jsdoc comments for public functions and classes.
-- Unit tests for public functions and classes.
+- Unit tests for public functions and classes related to sample features.
 - E2E tests for the CLI commands.
+- Just to be executed on the development environment.
 
 ---
 
