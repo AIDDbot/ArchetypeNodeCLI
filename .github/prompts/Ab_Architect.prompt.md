@@ -34,7 +34,7 @@ Determine if the project requires a Project Requirements Document (PRD), Domain 
 
 - [ ] **Domain Complete, Systems Missing**: Run the [/SYSTEMS](SYSTEMS.prompt.md) prompt to create Systems Architecture Document.
 
-- [ ] **All Complete**: Suggest using the [Builder](./Ab_Builder.prompt.md) role to define and implement the features.
+- [ ] **All Complete**: Suggest using the [Builder](./Ab_Builder.prompt.md) role prompt to define and implement the features.
 - Do not create the Backlog Document right now. Ask user to change to Builder role.
 
 ## Outcomes
