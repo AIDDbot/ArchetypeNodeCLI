@@ -33,7 +33,7 @@ Add a `bin` entry, wire Commander for command parsing, implement `--help` and `-
   - [Spec](/docs/backlog/F1.2.spec.md)
   - [Design](/docs/backlog/F1.2.design.md)
 
-### F1.3 Chalk-powered console output ❌ BLOCKED
+### F1.3 Chalk-powered console output ✨ DESIGNED
 
 - **Dependencies:**
   - F1.2 CLI entrypoint with Commander and help
@@ -41,6 +41,9 @@ Add a `bin` entry, wire Commander for command parsing, implement `--help` and `-
   - R1 Core CLI framework and help
 
 Integrate Chalk for readable, colorized output and consistent message styles.
+
+  - [Spec](/docs/backlog/F1.3.spec.md)
+  - [Design](/docs/backlog/F1.3.design.md)
 
 ---
 
