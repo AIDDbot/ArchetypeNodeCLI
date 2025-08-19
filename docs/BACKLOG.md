@@ -9,7 +9,6 @@
 - Bootstrap a minimal, TypeScript-first Node v24 CLI project with opinionated defaults and minimal dependencies.
 
 ### F1.1 Initialize package and TypeScript config 📝 DESIGNED  
-[Spec](/docs/backlog/F1.1.spec.md)
 
 - **Dependencies:**
   <!-- May be empty -->
@@ -18,6 +17,8 @@
   - Technical Constraints: Node v24, TypeScript
 
 Create `package.json`, `tsconfig.json`, base folder structure (e.g., `src/`), and minimal npm scripts.
+
+- [Spec](/docs/backlog/F1.1.spec.md)
 
 ### F1.2 CLI entrypoint with Commander and help ❌ BLOCKED
 
