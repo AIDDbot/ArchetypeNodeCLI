@@ -19,12 +19,6 @@ Create a BACKLOG that outlines the epics and features for the project.
 - [DOMAIN.md](/docs/DOMAIN.md)
 - [SYSTEMS.md](/docs/SYSTEMS.md)
 
-### Backlog in GitHub Issues or File System
-
-- Determine if this is a GitHub repository.
-- Determine if you have the `#create_issue` tool to access the GitHub API via MCP.
-- If so, use the GitHub tool to create issues for epics with sub-issues for features.
-
 ## Workflow
 
 - [ ] Write a list of features based on the PRD, DOMAIN, and SYSTEMS documents.
@@ -37,34 +31,15 @@ Create a BACKLOG that outlines the epics and features for the project.
 
 - [ ] Group related features into epics for better organization.
 
-- [ ] Prioritize epics and features based on business value and technical feasibility.
+- [ ] Identify feature dependencies.
 
+- [ ] Feature status triage: If has dependencies, set status to ❌ BLOCKED. If not, set to ⏳ PENDING.
 
-### GitHub Issues Backlog
+- [ ] Epic prioritization triage: If has blocking features, set priority to ‼️ Critical. If not, set to ❗ High or ❕ Normal based on business value and technical feasibility.
 
- > Read and follow this section if this is a GitHub repository and you have the `#create_issue` tool. Skip otherwise.
+- [ ] Sort epics by priority, and features within each epic by technical feasibility.
 
-- [ ] Read and follow the [#github-issue-epic](../instructions/tpl-github-issue-epic.instructions.md) template instructions for each epic. Set Issue Type = Task. Do not add type-like labels.
-- [ ] Create a GitHub issue for each the epic 
-
-- After finish with all epics.
-
-- [ ] Read and follow the [#github-sub-issue-feature](../instructions/tpl-github-sub-issue-feature.instructions.md) template instructions for each issue. Set Issue Type = Feature. Do not add a `feature` label.
-
--  [ ] Use the #add_sub_issue to add a sub-issue for each feature at its epic issue:
-	 - Link feature dependencies by referencing issue numbers (e.g., `#7`) so they’re clickable.
-	 - Apply exactly one status label per feature:
-		 - `status: ❌ BLOCKED` if the Dependencies list contains any real issue reference
-		 - `status: ⏳ PENDING` otherwise
-
-- After finish with all features.
-
-- [ ] Update [README.md](README.md) with a link to the GitHub issues page.
-
-- [ ] Commit changes by running [/git-commit](git-commit.prompt.md)
-
-
-### Files System Backlog
+### File System Backlog
 
  > Read and follow this section if no other backlog is applicable. Skip otherwise.
 

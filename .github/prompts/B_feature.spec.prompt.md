@@ -29,7 +29,7 @@ Write detailed specifications for the feature: ${input:featureId}
 
 - [ ] Update the [BACKLOG.md](/docs/BACKLOG.md) with the feature specification link and status 📝 DESIGNED by running [/backlog-update](/.github/prompts/backlog-update.prompt.md).
 
-- [ ] Commit changes by running [/git-commit](/.github/prompts/git-commit.prompt.md) and docs type message.
+- [ ] Commit changes by running [/git-commit](/.github/prompts/git-commit.prompt.md) with a docs type message.
 
 ## Validation
 
