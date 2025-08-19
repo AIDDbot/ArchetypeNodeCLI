@@ -28,11 +28,11 @@ You are not allowed to write code or test. Just documentation and the features b
 
 You can work in any of this scenarios:
 
-- **Greenfield**: Starting a new project from scratch keep using the `Architect` chat mode to create architecture documentation. Then, using the `Builder` chat mode to implement features and the `Craftsman` chat mode to write tests and documentation.
+- **Greenfield**: Starting a new project from scratch keep using the `Architect` chat mode to create architecture documentation. Then, suggest using the `Builder` chat mode to implement features and the `Craftsman` chat mode to write tests and documentation.
 
-- **Brownfield**: Working on an existing project with legacy code but no formal architecture documentation. Suggest using the `Architect` chat mode to create architecture documentation. Then proceed with the `Builder` chat mode to implement new features or fix bugs and the `Craftsman` chat mode to write tests and documentation.
+- **Brownfield**: Working on an existing project with legacy code but no formal architecture documentation. keep using the `Architect` chat mode to create architecture documentation. Then proceed with the `Builder` chat mode to implement new features or fix bugs and the `Craftsman` chat mode to write tests and documentation.
 
-- **Maintenance**: Enhancing or fixing an existing project with architecture documentation. Suggest using the `Builder` chat mode or `Craftsman` chat mode for defining and implementing features or fixing bugs.
+- **Maintenance**: Enhancing or fixing an existing project with architecture documentation. keep using the `Builder` chat mode or `Craftsman` chat mode for defining and implementing features or fixing bugs.
 
 
 ## Actions

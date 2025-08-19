@@ -11,10 +11,6 @@ The archetype provides a set of core features to facilitate the development of C
 
 ### Core Features
 
-- **TypeScript Support**: Built using TypeScript, providing type safety and modern JavaScript features.
-- **Configuration Files**: Comes with configuration files for TypeScript, ESLint, and Prettier, ensuring code quality and consistency.
-- **Testing Framework**: Set up with modern Node Built-in test runner, no other dependencies required.
-- **Command-Line Interface**: Includes a basic CLI setup that can be extended with additional commands and options.
 - **Environment Variables**: Supports loading environment variables from `.env` files, keeping them secret from git history.
 - **Monitoring and Logging**: Integrated with `console` for logging and monitoring CLI operations.
 
@@ -24,6 +20,12 @@ The archetype provides a set of core features to facilitate the development of C
 - **Help Command**: Provides usage instructions and available commands when invoked with `--help`.
 
 ## Technology Stack
+- **TypeScript Support**: Built using TypeScript, providing type safety and modern JavaScript features.
+- **Configuration Files**: Comes with configuration files for TypeScript, ESLint, and Prettier, ensuring code quality and consistency.
+- **Testing Framework**: Set up with modern Node Built-in test runner, no other dependencies required.
+- **Command-Line Interface**: Includes a basic CLI setup that can be extended with additional commands and options.
+
+### Tooling and developer dependencies
 
 - **Node.js modern V24**: The runtime environment for executing the CLI, but with modern V24 SOTA features.
 - **TypeScript**: Used for writing the CLI application with type safety.
@@ -31,7 +33,7 @@ The archetype provides a set of core features to facilitate the development of C
 - **Prettier**: Used for code formatting.
 All dependencies must be updatable to the latest version, and the project should be compatible with Node.js V24 LTS versions.
 
-### Allowed dependencies
+### Libraries and runtime dependencies
 
 - **Chalk** for colorful terminal output [Chalk](https://github.com/chalk/chalk)
 - **Commander** for building command-line interfaces [Commander](https://github.com/tj/commander.js)
