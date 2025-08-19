@@ -1,5 +1,5 @@
 ---
-description: "Create a Project Requirements Document (PRD)"
+description: 'Create a Project Requirements Document (PRD)'
 ---
 
 # Project Requirements Document (PRD)

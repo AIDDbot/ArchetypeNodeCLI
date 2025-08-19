@@ -58,9 +58,9 @@ C4Context
 
 ## Additional Information
 
-- Git repository: https://github.com/AIDDbot/ArchetypeNodeCLI
-- DOMAIN Models: ./DOMAIN.md
-- SYSTEMS Architecture: ./SYSTEMS.md
-- BACKLOG of features: ./BACKLOG.md
+- [Git repository](https://github.com/AIDDbot/ArchetypeNodeCLI)
+- [PRD Document](./PRD.md)
+- [SYSTEMS Architecture](./SYSTEMS.md)
+- [BACKLOG of features](./BACKLOG.md)
 
 > End of PRD for Archetype Node CLI, last updated on 2025-08-19.

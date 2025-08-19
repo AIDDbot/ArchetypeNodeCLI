@@ -1,5 +1,5 @@
 ---
-description: "Create the BACKLOG for a project."
+description: 'Create the BACKLOG for a project.'
 ---
 
 # Backlog

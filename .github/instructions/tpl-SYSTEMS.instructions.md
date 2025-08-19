@@ -1,6 +1,6 @@
 ---
-description: "Template for SYSTEMS document for a project."
-applyTo: "/docs/SYSTEMS.md"
+description: 'Template for SYSTEMS document for a project.'
+applyTo: '/docs/SYSTEMS.md'
 ---
 
 # Systems Architecture for { PROJECT_NAME }
