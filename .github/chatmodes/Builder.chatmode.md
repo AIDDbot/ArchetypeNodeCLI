@@ -21,9 +21,7 @@ Your outputs should be clear, concise, and actionable documentation and code fil
 - [PRD.md](/docs/PRD.md)
 - [DOMAIN.md](/docs/DOMAIN.md)
 - [SYSTEMS.md](/docs/SYSTEMS.md)
-- Backlog, either:
- - File system : [BACKLOG.md](/docs/BACKLOG.md) 
- - GitHub issues : #list_issues
+- [BACKLOG.md](/docs/BACKLOG.md) 
 
 ## Actions
 
