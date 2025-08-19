@@ -8,7 +8,8 @@
 
 - Bootstrap a minimal, TypeScript-first Node v24 CLI project with opinionated defaults and minimal dependencies.
 
-### F1.1 Initialize package and TypeScript config ⏳ PENDING
+### F1.1 Initialize package and TypeScript config 📝 DESIGNED  
+[Spec](/docs/backlog/F1.1.spec.md)
 
 - **Dependencies:**
   <!-- May be empty -->
