@@ -9,6 +9,9 @@ A TypeScript-based archetype for building modern Node.js CLI applications. It em
 ## Documentation
 
 - Project Requirements Document (PRD): [docs/PRD.md](./docs/PRD.md)
+- Domain Model: [docs/DOMAIN.md](./docs/DOMAIN.md)
+- Systems Architecture: [docs/SYSTEMS.md](./docs/SYSTEMS.md)
+- Backlog: [docs/BACKLOG.md](./docs/BACKLOG.md)
 - Briefing: [docs/archetype-node_cli.briefing.md](./docs/archetype-node_cli.briefing.md)
 
 ## Author
