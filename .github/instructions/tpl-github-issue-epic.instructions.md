@@ -15,11 +15,15 @@ description: "Template for an Issue in GitHub for an Epic"
 
 ````
 
+## Issue type
+
+- [ ] Set the GitHub Issue Type to 'Task'
+
 ## Issue labeling
 
 - [ ] Label issue as `epic`
 
 - [ ] Label issues based on priority:
-  - `priority: ‼️ Critical`
+  - `priority: ‼️ Critical` (if got features with dependents)
   - `priority: ❗ High`
   - `priority: ❕ Normal`
