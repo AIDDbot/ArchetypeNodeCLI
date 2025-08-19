@@ -29,7 +29,6 @@ Write detailed specifications for the feature: ${input:featureId}
 
 - [ ] Update the [BACKLOG.md](/docs/BACKLOG.md) with:
   - [ ] a link to the feature specification
-  - [ ] change the status to 📝 DESIGNED
 
 - [ ] Commit changes by running [/git-commit](/.github/prompts/git-commit.prompt.md) with a docs type message.
 

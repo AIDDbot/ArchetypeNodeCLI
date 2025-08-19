@@ -1,57 +1,28 @@
 ---
-description: "Template for feature design."
+description: 'Template for feature design.'
+applyTo: '/docs/backlog/*.design.md'
 ---
 
-# Design Document
+# { Feature Id } {Feature Name} Design 
 
 ## Overview
 
 {High-level description of the feature and its place in the overall system}
 
-## Steering Document Alignment
-
-### Technical Standards (SYSTEMS.md)
-
-{How the design follows documented technical patterns and standards}
-
-### Project Structure (STRUCTURE.md)
-
-{How the implementation will follow project organization conventions}
-
-## Code Reuse Analysis
-
-{What existing code will be leveraged, extended, or integrated with this feature}
-
-### Existing Components to Leverage
-
-- **{Component/Utility Name}**: {How it will be used}
-- **{Service/Helper Name}**: {How it will be extended}
-
-### Integration Points
-
-- **{Existing System/API}**: {How the new feature will integrate}
-- **{Database/Storage}**: {How data will connect to existing schemas}
-
 ## Architecture
 
 {Describe the overall architecture and design patterns used}
 
-\`\`\`mermaid
-graph TD
-A[Component A] --> B[Component B]
-B --> C[Component C]
-\`\`\`
+### Component Diagram
 
-## Components and Interfaces
+```mermaid
+C4Component
+    { This is a placeholder for the component diagram. Use C4 model to represent the components involved in this feature. }
+```
+
+## Components
 
 ### Component 1
-
-- **Purpose:** {What this component does}
-- **Interfaces:** {Public methods/APIs}
-- **Dependencies:** {What it depends on}
-- **Reuses:** {Existing components/utilities it builds upon}
-
-### Component 2
 
 - **Purpose:** {What this component does}
 - **Interfaces:** {Public methods/APIs}
@@ -62,50 +33,32 @@ B --> C[Component C]
 
 ### Model 1
 
-\`\`\`
-{Define the structure of Model1 in your language}
+{purpose and tier / layer where it belongs}
 
-- id: {unique identifier type}
-- name: {string/text type}
-- {Additional properties as needed}
-  \`\`\`
+```code-language
+{Define the structure of Model1 in the coding language of the container}
+```
 
-### Model 2
+## User interface
 
-\`\`\`
-{Define the structure of Model2 in your language}
+{Describe the user interface for this feature, including any screens, dialogs, or other elements that the user will interact with.}
 
-- id: {unique identifier type}
-- {Additional properties as needed}
-  \`\`\`
+### Routes/Commands
 
-## Error Handling
+{List of url for APIs or pages, or command names involved}
 
-### Error Scenarios
+## Aspects
 
-1. **Scenario 1:** {Description}
-   - **Handling:** {How to handle}
-   - **User Impact:** {What user sees}
+### Monitoring
 
-2. **Scenario 2:** {Description}
-   - **Handling:** {How to handle}
-   - **User Impact:** {What user sees}
+{Describe how this feature will be monitored, including metrics, logging, and alerting}
 
-## Testing Strategy
+### Security
 
-### Unit Testing
+{Outline the security considerations for this feature, including data protection, authentication, and authorization}
 
-- {Unit testing approach if applicable}
-- {Key components to test if any}
+### Error Handling
 
-### Integration Testing
-
-- {Integration testing approach if applicable}
-- {Key flows to test if any}
-
-### End-to-End Testing
-
-- {User scenarios to test if applicable}
-- {E2E testing approach if any}
+{Define the overall strategy for error handling in this feature, including logging, user notifications, and fallback mechanisms.}
 
 > End of Feature Design for { Feature Id }, last updated { DATE }.
