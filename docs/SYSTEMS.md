@@ -4,7 +4,7 @@
 
 Archetype Node CLI follows a single-container, layered CLI architecture, designed for simplicity, maintainability, and minimal dependencies with a Node.js v24 + TypeScript approach leveraging modern built-ins.
 
-## System Components
+## System Containers
 
 ### S1 CLI Application
 
