@@ -30,6 +30,8 @@ Create `package.json`, `tsconfig.json`, base folder structure (e.g., `src/`), an
 
 Add a `bin` entry, wire Commander for command parsing, implement `--help` and `--version`.
 
+  - [Spec](/docs/backlog/F1.2.spec.md)
+
 ### F1.3 Chalk-powered console output ❌ BLOCKED
 
 - **Dependencies:**
