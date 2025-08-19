@@ -21,7 +21,7 @@ Create `package.json`, `tsconfig.json`, base folder structure (e.g., `src/`), an
   - [Spec](/docs/backlog/F1.1.spec.md)
   - [Design](/docs/backlog/F1.1.design.md)
 
-### F1.2 CLI entrypoint with Commander and help ❌ BLOCKED
+### F1.2 CLI entrypoint with Commander and help ✨ DESIGNED
 
 - **Dependencies:**
   - F1.1 Initialize package and TypeScript config
@@ -31,6 +31,7 @@ Create `package.json`, `tsconfig.json`, base folder structure (e.g., `src/`), an
 Add a `bin` entry, wire Commander for command parsing, implement `--help` and `--version`.
 
   - [Spec](/docs/backlog/F1.2.spec.md)
+  - [Design](/docs/backlog/F1.2.design.md)
 
 ### F1.3 Chalk-powered console output ❌ BLOCKED
 
