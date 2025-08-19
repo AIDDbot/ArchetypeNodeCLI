@@ -77,18 +77,12 @@ C4Container
     Person(dev, "Developer", "Runs the CLI and its commands")
     System_Boundary(cli, "Archetype Node CLI") {
       Container(app, "CLI Application", "Node.js v24 / TypeScript", "Commands, validation, HTTP fetch, console output")
-      Container_Library(commander, "Commander", "Library", "Command parsing & help")
-      Container_Library(zod, "Zod", "Library", "Input and response validation")
-      Container_Library(chalk, "Chalk", "Library", "Styled console output")
     }
 
     System_Ext(ipgeo, "IP Geolocation API", "ip-api.com")
     System_Ext(openmeteo, "Open Meteo API", "open-meteo.com")
 
     Rel(dev, app, "Invokes commands")
-    Rel(app, commander, "Parses commands/options")
-    Rel(app, zod, "Validates inputs & responses")
-    Rel(app, chalk, "Formats output")
     Rel(app, ipgeo, "GET JSON via fetch")
     Rel(app, openmeteo, "GET JSON via fetch")
 ```
