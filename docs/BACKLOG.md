@@ -51,7 +51,7 @@ Integrate Chalk for readable, colorized output and consistent message styles.
 
 - Provide environment configuration via Node’s `--env-file=.env` and a simple configuration access layer.
 
-### F2.1 `--env-file` wiring and config access ❌ BLOCKED
+### F2.1 `--env-file` wiring and config access ✨ DESIGNED
 
 - **Dependencies:**
   - F1.2 CLI entrypoint with Commander and help
@@ -59,6 +59,9 @@ Integrate Chalk for readable, colorized output and consistent message styles.
   - R2 Environment configuration
 
 Ensure the CLI respects `--env-file` usage and exposes environment variables to commands in a simple, typed accessor.
+
+  - [Spec](/docs/backlog/F2.1.spec.md)
+  - [Design](/docs/backlog/F2.1.design.md)
 
 ### F2.2 Provide `.env.example` and ignore `.env` ⏳ PENDING
 
