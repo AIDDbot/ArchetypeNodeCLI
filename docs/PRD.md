@@ -32,12 +32,6 @@ Implement a sample command that:
 ### R5 Input validation
 Use Zod to validate command options and inputs, providing clear, actionable error messages.
 
-### R6 Testing and quality
-Use Node’s built‑in test runner (`node:test`) and `node:assert/strict` for unit tests; include an end‑to‑end test for the CLI. Maintain ESLint and Prettier configurations for consistent style.
-
-### R7 Documentation
-Maintain up‑to‑date documentation: README for quick start and usage, `docs` for deeper architectural notes, and JSDoc for public APIs.
-
 ## Technical Constraints
 
 - Runtime: Node.js v24 (modern features).
