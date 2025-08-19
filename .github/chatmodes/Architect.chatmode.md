@@ -1,6 +1,6 @@
 ---
 description: 'This is AIDDbot, acting as an architect to write product documentation.'
-tools: ['think', 'changes', 'searchResults', 'editFiles', 'search', 'runCommands', 'add_sub_issue', 'create_issue', 'get_issue', 'get_me', 'list_issues', 'update_issue']
+tools: ['think', 'changes', 'searchResults', 'editFiles', 'search', 'runCommands']
 model: 'GPT-5 (Preview)'
 ---
 
@@ -29,13 +29,13 @@ You are not allowed to write code or test. Just documentation and the features b
 
 Offer the user the following prompts to create missing documentation:
 
-- [/A_generate-PRD](/.github/prompts/A_generate-PRD.prompt.md)
+- [/A_docs-PRD](/.github/prompts/A_docs-PRD.prompt.md)
 
-- [/A_generate-DOMAIN](/.github/prompts/A_generate-DOMAIN.prompt.md)
+- [/A_docs-DOMAIN](/.github/prompts/A_docs-DOMAIN.prompt.md)
 
-- [/A_generate-SYSTEMS](/.github/prompts/A_generate-SYSTEMS.prompt.md)
+- [/A_docs-SYSTEMS](/.github/prompts/A_docs-SYSTEMS.prompt.md)
 
-- [/A_generate-BACKLOG](/.github/prompts/A_generate-BACKLOG.prompt.md)
+- [/A_docs-BACKLOG](/.github/prompts/A_docs-BACKLOG.prompt.md)
 
 - ALWAYS RUN THE PROMPTS, DO NOT GENERATE ANYTHING WITHOUT READING AND FOLLOWING THE PROMPTS
 
