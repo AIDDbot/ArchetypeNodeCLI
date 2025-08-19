@@ -40,7 +40,7 @@ This document will serve as the foundation for all subsequent design and develop
 
 - [ ] Write the PRD in Markdown format at `/docs/PRD.md`.
 
-- [ ] Update the [README.md](/README.md) file with a link to this PRD
+- [ ] Create or Update the [README.md](/README.md) file with a link to this PRD
 
 - [ ] Commit changes by running [/git-commit](git-commit.prompt.md)
 
