@@ -1,15 +1,15 @@
 ---
-description: "Write Feature Implementation Tasks"
+description: 'Write Feature Implementation Plan'
 ---
 
-# Feature Implementation Tasks
+# Feature Implementation Plan
 
-Write detailed tasks for implementing the feature: ${input:featureId}
+Write a detailed plan for implementing the feature: ${input:featureId}
 
 ## Context
 
-- [{featureId}.spec.md](/docs/feats/{featureId}.spec.md)
-- [{featureId}.design.md](/docs/feats/{featureId}.design.md)
+- [{featureId}.spec.md](/docs/backlog/{featureId}.spec.md)
+- [{featureId}.design.md](/docs/backlog/{featureId}.design.md)
 - [Architecture Instructions](/.github/instructions/architecture.instructions.md)
 - [STRUCTURE.md](/docs/STRUCTURE.md) (if exists)
 - [Database Instructions](/.github/instructions/database.instructions.md) (if applicable)

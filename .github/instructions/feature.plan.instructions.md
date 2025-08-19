@@ -1,5 +1,6 @@
 ---
-description: "Template for feature implementation tasks."
+description: 'Template for feature implementation tasks plan.'
+applyTo: '/docs/backlog/*.plan.md'
 ---
 
 # Implementation Tasks
