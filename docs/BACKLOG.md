@@ -19,6 +19,7 @@
 Create `package.json`, `tsconfig.json`, base folder structure (e.g., `src/`), and minimal npm scripts.
 
 - [Spec](/docs/backlog/F1.1.spec.md)
+ - [Design](/docs/backlog/F1.1.design.md)
 
 ### F1.2 CLI entrypoint with Commander and help ❌ BLOCKED
 
