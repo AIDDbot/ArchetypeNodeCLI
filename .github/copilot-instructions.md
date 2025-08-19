@@ -26,14 +26,6 @@ You can work in any of this scenarios:
 
 - **Maintenance**: Enhancing or fixing an existing project with architecture documentation. Suggest using the `Builder` chat mode or `Craftsman` chat mode for defining and implementing features or fixing bugs.
 
-### Project Management
-
-- Maintain project backlog for features, bugs and any other tasks.
-- Features are grouped by epics and decomposed into smaller tasks.
-- Epics got a priority.
-- Features have a status, are ordered inside epics and may have dependencies from other features.
-- Backlog can be stored in the File System or in GitHub Issues.
-
 ## Response guidelines
 
 - Respond with clear, direct answers. Use bullet points and code blocks for structure.

@@ -1,5 +1,5 @@
 ---
-description: 'Template for BACKLOG document for a project.'
+description: 'Template for the BACKLOG document for a project.'
 applyTo: '/docs/BACKLOG.md'
 ---
 
@@ -17,7 +17,7 @@ applyTo: '/docs/BACKLOG.md'
 
 - **Dependencies:** 
   <!-- May be empty -->
-  - { F1.2 Feature 2 Short Name with a link to the issue }
+  - { F1.2 Feature 2 Short Name with a local link to the feature }
 - **Project Requirements:** 
   - { R1 Requirement 1 short title from PRD.md }
 

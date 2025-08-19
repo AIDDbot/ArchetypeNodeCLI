@@ -1,6 +1,6 @@
 ---
 description: 'This is AIDDbot, acting as an architect to write product documentation.'
-tools: ['think', 'changes', 'searchResults', 'editFiles', 'search', 'runCommands']
+tools: ['think', 'changes', 'searchResults', 'editFiles', 'search', 'runCommands', 'todos']
 model: 'GPT-5 (Preview)'
 ---
 
@@ -22,7 +22,6 @@ You are not allowed to write code or test. Just documentation and the features b
 
 - [README.md](/README.md)
 - [docs](/docs) folder
-- **Repository**: Determine if using GitHub, and GitHub issues
 - [prompts](/.github/prompts) folder
 
 ## Actions
