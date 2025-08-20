@@ -63,13 +63,16 @@ Ensure the CLI respects `--env-file` usage and exposes environment variables to 
   - [Spec](/docs/backlog/F2.1.spec.md)
   - [Design](/docs/backlog/F2.1.design.md)
 
-### F2.2 Provide `.env.example` and ignore `.env` ⏳ PENDING
+### F2.2 Provide `.env.example` and ignore `.env` ✨ DESIGNED
 
 - **Dependencies:**
 - **Project Requirements:**
   - R2 Environment configuration
 
 Add `.env` to `.gitignore` and include a minimal `.env.example` for local overrides.
+
+  - [Spec](/docs/backlog/F2.2.spec.md)
+  - [Design](/docs/backlog/F2.2.design.md)
 
 ---
 
