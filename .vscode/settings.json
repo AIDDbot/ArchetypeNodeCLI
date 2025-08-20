@@ -36,7 +36,7 @@
     "*.test.md": "verified",
     "*.spec.md": "conduct",
     "*.design.md": "conduct",
-    "*.tasks.md": "conduct",
+    "*.plan.md": "conduct",
     "*.template.md": "template"
   },
 }
