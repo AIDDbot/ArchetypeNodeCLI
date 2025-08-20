@@ -109,7 +109,7 @@ Standardize error reporting, map failures to non-zero exit codes, and ensure gra
 
 ---
 
-## E4 Weather Command ‼️ Critical
+## E4 Weather Command ❗ High
 
 - Implement a sample `weather` command that resolves location via IP and fetches weather, printing a concise summary.
 
@@ -156,7 +156,7 @@ Expose a `weather` command with optional flags (e.g., units) validated with Zod,
 
 ---
 
-## E5 Developer Experience & Run ‼️ Critical
+## E5 Developer Experience & Run Workflow ❕ Normal 
 
 - Smooth local development with Node v24 features; keep tooling minimal.
 

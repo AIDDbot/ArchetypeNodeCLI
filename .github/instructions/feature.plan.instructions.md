@@ -3,26 +3,23 @@ description: 'Template for feature implementation tasks plan.'
 applyTo: '/docs/backlog/*.plan.md'
 ---
 
-# Implementation Tasks
+# Implementation Plan
 
 ## Overview
 
 {Brief description of the implementation approach}
 
+## Context
+
+{List of instructions files needed during development}
+
 ## Tasks
 
 - [ ] 1. {Task name}
-  - {Task description}
-  - _Leverage: {list of current files}_
-  - _Requirements: 1.1_
-- [ ] 1.1 {Subtask name}
-  - {Subtask description}
-  - _Leverage: {list of current files}_
-  - _Requirements: 1.2, 1.3_
-
+  - {Task step 1}
+  - {Task step 2}
 - [ ] 2. {Task name}
-  - {Task description}
-  - _Leverage: src/services/apiService.ts_
-  - _Requirements: 2.1, 2.2_
+  - {Task step 1}
+  - {Task step 1}
 
 > End of Feature Implementation Tasks for { Feature Id }, last updated { DATE }.
