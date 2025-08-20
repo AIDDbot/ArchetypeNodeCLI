@@ -20,6 +20,7 @@ Create `package.json`, `tsconfig.json`, base folder structure (e.g., `src/`), an
 
   - [Spec](/docs/backlog/F1.1.spec.md)
   - [Design](/docs/backlog/F1.1.design.md)
+  - [Plan](/docs/backlog/F1.1.plan.md)
 
 ### F1.2 CLI entrypoint with Commander and help ✨ DESIGNED
 
