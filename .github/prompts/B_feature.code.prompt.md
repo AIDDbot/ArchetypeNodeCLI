@@ -32,6 +32,7 @@ Write code for the feature: ${input:featureId}
 
 - [ ] Update the [BACKLOG.md](/docs/BACKLOG.md) with:
   - [ ] change or keep the status to ✅ CODED
+  - [ ] review dependent Blocked features, change to ⏳ PENDING if necessary
 
 - [ ] Commit changes by running [/git-commit](/.github/prompts/git-commit.prompt.md) with a feat type message.
 
