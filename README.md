@@ -23,8 +23,8 @@ bun upgrade --stable
 2. Install dependencies and run the tests
 ```bash
 bun install
-bun start   # runs the server in production mode
-bun test    # runs the unit tests
+bun start   # runs the CLI (prints the health message)
+bun run test  # runs the unit tests
 bun dev     # runs in watch mode for development
 bun lint    # runs the linter
 ```
