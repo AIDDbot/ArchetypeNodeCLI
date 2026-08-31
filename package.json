@@ -4,15 +4,19 @@
   "private": true,
   "type": "module",
   "license": "MIT",
-  "engines": {
-    "node": ">=24"
-  },
   "scripts": {
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "clean": "node -e \"import('node:fs').then(fs=>fs.rm('dist',{recursive:true,force:true}));\""
   },
+  "dependencies": {},
   "devDependencies": {
-    "@types/node": "^24.3.0",
-    "typescript": "^5.9.2"
+    "@types/node": "^26.2.0",
+    "oxlint": "^1.80.0",
+    "oxlint-tsgolint": "^7.0.2001",
+    "typescript": "^7.0.2"
+  },
+  "engines": {
+    "node": ">=24.0.0",
+    "bun": ">=1.4.0"
   }
 }
