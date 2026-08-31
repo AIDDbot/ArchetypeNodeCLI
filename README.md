@@ -1,26 +1,48 @@
-# Cursor session audit
+# [cli-node](https://github.com/AIDDbot/cli-node)
 
-Two Node scripts that turn Cursor hook events into one JSONL log and one Markdown report per human conversation.
+Archetype with boilerplate code for a CLI with node
 
-Copy both files into `.agents/hooks/` of any project (Node >= 24, no npm install):
+## Quick start
 
-- `cursor-audit-ingest.mjs`
-- `cursor-audit-report.mjs`
+> [!IMPORTANT]
+> this projects uses `bun` as a package manager and runner.
 
-Wire them in `.cursor/hooks.json` (and optionally `.github/hooks/audit.json`):
-
-```json
-{
-  "version": 1,
-  "hooks": {
-    "sessionStart": [{ "command": "node .agents/hooks/cursor-audit-ingest.mjs" }],
-    "sessionEnd": [{ "command": "node .agents/hooks/cursor-audit-ingest.mjs" }],
-    "subagentStart": [{ "command": "node .agents/hooks/cursor-audit-ingest.mjs" }],
-    "subagentStop": [{ "command": "node .agents/hooks/cursor-audit-ingest.mjs" }]
-  }
-}
+1. Install bun: the fastest tooling manager for Node.js projects.
+```bash
+# Install Bun 
+# (Windows PowerShell)
+powershell -c "irm bun.com/install.ps1 | iex"
+# (macOS/Linux)
+curl -fsSL https://bun.com/install | bash -s
+# Verify installation
+bun --version
+# Upgrade Bun to the latest stable version
+bun upgrade --stable
 ```
 
-Output lands in `temp/audit/{conversation}.md` from the first `sessionStart` (updated as subagents run). `{conversation}.jsonl` is a working log deleted when the root session ends.
+2. Install dependencies and run the tests
+```bash
+bun install
+bun start   # runs the server in production mode
+bun test    # runs the unit tests
+bun dev     # runs in watch mode for development
+bun lint    # runs the linter
+```
 
-This repo keeps a TypeScript source tree under `src/`. After editing it, run `npm run build` to regenerate the two copy-paste scripts. `npm test` pipes fake hook payloads into ingest (tests A–F from `spec.md`).
+## Tool stack
+
+- [TypeScript7](https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/) : typed superset of JavaScript that compiles to plain JavaScript.
+- [Node26](https://nodejs.org/es/blog/release/v26.0.0/) : JavaScript runtime built on Chrome's V8 JavaScript engine.
+- [Bun 1.4.0](https://bun.com/docs/installation) : JavaScript runtime and package manager used by this project.
+- [Oxlint](https://oxc.rs/docs/guide/usage/linter) : high-performance linter for  TypeScript 
+
+### Pending: 
+- [Stryker](https://stryker-mutator.io/docs/stryker-js/introduction/) : mutation testing framework for JavaScript and TypeScript.
+- Some CRAP analysis tool for TypeScript.
+---
+
+-**Author**
+
+- [Alberto Basalo](https://albertobasalo.dev)
+- [GitHub](https://github.com/AIDDbot/AIDDbot)
+- [A.I. Code Academy](https://aicode.academy) (ES)
