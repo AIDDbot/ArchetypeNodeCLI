@@ -1,12 +1,14 @@
 {
-  "name": "@aidd/archetype-node-cli",
-  "version": "0.1.0",
+  "name": "cursor-auditor",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "license": "MIT",
   "scripts": {
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "clean": "node -e \"import('node:fs').then(fs=>fs.rm('dist',{recursive:true,force:true}));\""
+    "build": "node scripts/build-hooks.mjs",
+    "test": "node --test test/audit.test.mjs",
+    "lint": "oxlint --fix --format=agent --quiet"
   },
   "dependencies": {},
   "devDependencies": {
@@ -15,8 +17,8 @@
     "oxlint-tsgolint": "^7.0.2001",
     "typescript": "^7.0.2"
   },
+  "packageManager": "bun@1.4.0",
   "engines": {
-    "node": ">=24.0.0",
-    "bun": ">=1.4.0"
+    "node": ">=24.0.0"
   }
 }

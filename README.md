@@ -1,20 +1,26 @@
-# Archetype Node CLI
+# Cursor session audit
 
-A TypeScript-based archetype for building modern Node.js CLI applications. It emphasizes Node v24 built-ins, minimal dependencies, and clear examples like a weather command.
+Two Node scripts that turn Cursor hook events into one JSONL log and one Markdown report per human conversation.
 
-- Quick start, structure, and examples for CLI apps
-- Uses Commander, Chalk, and Zod
-- Built-in Node features: fetch, test runner, and `--env-file`
+Copy both files into `.agents/hooks/` of any project (Node >= 24, no npm install):
 
-## Documentation
+- `cursor-audit-ingest.mjs`
+- `cursor-audit-report.mjs`
 
-- Project Requirements Document (PRD): [docs/PRD.md](./docs/PRD.md)
-- Domain Model: [docs/DOMAIN.md](./docs/DOMAIN.md)
-- Systems Architecture: [docs/SYSTEMS.md](./docs/SYSTEMS.md)
-- Backlog of Features: [docs/BACKLOG.md](./docs/BACKLOG.md)
-- Briefing: [docs/archetype-node_cli.briefing.md](./docs/archetype-node_cli.briefing.md)
+Wire them in `.cursor/hooks.json` (and optionally `.github/hooks/audit.json`):
 
-## Author
+```json
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [{ "command": "node .agents/hooks/cursor-audit-ingest.mjs" }],
+    "sessionEnd": [{ "command": "node .agents/hooks/cursor-audit-ingest.mjs" }],
+    "subagentStart": [{ "command": "node .agents/hooks/cursor-audit-ingest.mjs" }],
+    "subagentStop": [{ "command": "node .agents/hooks/cursor-audit-ingest.mjs" }]
+  }
+}
+```
 
-- Alberto Basalo — https://albertobasalo.dev  
-- Project: AIDDbot — https://aiddbot.com
+Output lands in `temp/audit/{conversation}.md` from the first `sessionStart` (updated as subagents run). `{conversation}.jsonl` is a working log deleted when the root session ends.
+
+This repo keeps a TypeScript source tree under `src/`. After editing it, run `npm run build` to regenerate the two copy-paste scripts. `npm test` pipes fake hook payloads into ingest (tests A–F from `spec.md`).
